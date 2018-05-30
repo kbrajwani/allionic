@@ -1,0 +1,28 @@
+<!--
+  Generated template for the AdduserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ 
+  <ion-navbar>
+    <ion-title>adduser</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <b>Registration of user</b>
+  <ion-input placeholder="name" autofocus="" [(ngModel)]="name"></ion-input>
+<ion-input type="email" placeholder="email" [(ngModel)]="email" ></ion-input>
+<ion-item>
+ <ion-datetime placeholder="date" [(ngModel)]="bday">date</ion-datetime>
+</ion-item>
+<ion-list radio-group [(ngModel)]="gender">
+male<ion-radio [value]="male"></ion-radio>
+female<ion-radio [value]="female"></ion-radio>
+</ion-list>
+<ion-input placeholder="address" autofocus="" [(ngModel)]="address" (keyup.enter)="add()"></ion-input>
+</ion-content>

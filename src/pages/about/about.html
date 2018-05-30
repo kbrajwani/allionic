@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<table>
+  <tr>
+<td colspan="4"><input type="text" style="height:100px;width:200px;" [(ngModel)]="num"/></td>
+    </tr>
+<tr>
+<td><button (click)="onc()" ion-button block>c</button></td>
+<td><button (click)="onback()" ion-button block><ion-icon name="backspace"></ion-icon></button></td>
+<td><button (click)="ondiv()" ion-button block>/</button></td>
+<td><button (click)="onmul()" ion-button block>*</button></td>
+</tr>
+
+<tr>
+<td><button (click)="on7()" ion-button block>7</button></td>
+<td><button (click)="on8()" ion-button block>8</button></td>
+<td><button (click)="on9()" ion-button block>9</button></td>
+<td><button (click)="onplus()" ion-button block>+</button></td>
+</tr>
+<tr>
+<td><button (click)="on4()" ion-button block>4</button></td>
+<td><button (click)="on5()" ion-button block>5</button></td>
+<td><button (click)="on6()" ion-button block>6</button></td>
+<td><button (click)="onminus()" ion-button block>-</button></td>
+</tr>
+<tr>
+<td><button (click)="on1()" ion-button block>1</button></td>
+<td><button (click)="on2()" ion-button block>2</button></td>
+<td><button (click)="on3()" ion-button block>3</button></td>
+<td rowspan="2"><button (click)="onequal()" style="height:80px" ion-button block>=</button></td>
+
+</tr>
+<tr>
+<td><button (click)="ondot()" ion-button block>.</button></td>
+<td><button (click)="on0()" ion-button block>0</button></td>
+<td><button (click)="onper()" ion-button block>%</button></td>
+
+</tr>
+ </table> 
+
+
+<ion-list>
+
+  <ion-item>
+    <ion-label floating>number1</ion-label>
+    <ion-input [(ngModel)]="num1" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>number2</ion-label>
+    <ion-input type="number" [(ngModel)]="num2" ></ion-input>
+  </ion-item>
+
+<button (click)="onClick()" ion-button block>Add</button>
+<h2>{{ans}}</h2>
+</ion-list>
+</ion-content>

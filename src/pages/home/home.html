@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content padding>
+  
+  <button (click)=visibleuser()>user</button>
+  <button (click)=visibleemp()>employee</button>
+  <button (click)=visibletodo()>todo</button>
+  <ion-list inset>
+   
+    <ion-list *ngIf="x">
+      <ion-icon (click)="add()" name="add-circle" item-right></ion-icon>
+    <table width="100%">
+        <tr><td>name</td><td>action</td></tr>
+        <tr *ngFor="let item of arr"><td><a (click)="showuser(item)">{{item.name}}</a></td><td><ion-icon name="trash" item-right (click)="delete(item)"></ion-icon></td></tr>
+    </table>  
+  </ion-list>
+    <ion-list *ngIf="y">
+        <ion-icon (click)="addemp()" name="add-circle" item-right></ion-icon>
+        <table width="100%">
+            <tr><td>name</td><td>action</td></tr>          
+            <tr *ngFor="let item1 of arr1"><td><a (click)="showemp(item1)">{{item1.empname}}</a></td><td><ion-icon name="trash" item-right (click)="deleteemp(item1)"></ion-icon></td></tr>
+        </table>     
+      </ion-list>
+      <ion-list *ngIf="z">
+        <b>for todo tasks</b>
+        <ion-input placeholder="id" autofocus="" [(ngModel)]="todoid"></ion-input>
+        <ion-input placeholder="add task" [(ngModel)]="todotitle" (keyup.enter)="addtodo()"></ion-input>
+        <table width="100%">
+            <tr><td>title</td><td>action</td></tr>
+            <tr *ngFor="let item2 of arr2"><td><a (click)="showtodo(item2)">{{item2.title}}</a></td><td><ion-icon name="trash" item-right (click)="deletetodo(item2)"></ion-icon></td></tr>
+        </table>     
+      </ion-list>
+  </ion-list>
+
+
+</ion-content>

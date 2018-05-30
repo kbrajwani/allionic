@@ -1,0 +1,28 @@
+<!--
+  Generated template for the TaskPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>task</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-fab top right edge>
+        <button ion-fab mini (click)="onadd()"><ion-icon name="add"></ion-icon></button>
+   </ion-fab>    
+   <ion-input [(ngModel)]="txtsearch" (keyup)="searchterm()"></ion-input>
+  <h1 *ngFor="let item of arr">
+    <span [ngClass]="{'donestatus':item.Status=='done','pendingstatus':item.Status=='pending'}" >
+      <label>{{item.Title}}</label>
+    </span>
+    <ion-checkbox name="chk1" (click)="update(item)"></ion-checkbox>
+    <ion-icon item-end name="trash" (click)=delete(item)></ion-icon>
+  </h1>
+</ion-content>
